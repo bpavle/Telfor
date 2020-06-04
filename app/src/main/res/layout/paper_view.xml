@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/paperTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Naslov rada koji moze biti poprilicno dugacak"
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/authorList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+
+        android:text="@string/authorListTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paperTitle" />
+
+    <TextView
+        android:id="@+id/paperAbstract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="@string/paperAbstract"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/authorList"
+
+        />
+
+    <TextView
+    android:id="@+id/paperSection"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+
+    android:text="@string/paperSectionTextView"
+    app:layout_constraintStart_toStartOf="parent"
+
+    app:layout_constraintTop_toBottomOf="@+id/paperAbstract" />
+    <TextView
+        android:id="@+id/paperTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+
+        android:text="@string/dateTimeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/paperSection" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

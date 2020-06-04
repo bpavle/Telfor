@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Telfor</string>
+    <string name="authorsLabel">Authors</string>
+    <string name="papersLabel">Papers</string>
+    <string name="chairpersonsLabel">Chairpersons</string>
+    <string name="sectionsLabel">Sections</string>
+    <string name="homeLabel">Home</string>
+    <string name="searchLabel">Search</string>
+    <string name="authorListTextView"><b>Authors: </b></string>
+    <string name="paperSectionTextView"><b>Section: </b></string>
+    <string name="dateTimeTextView"><b>Date/time: </b></string>
+    <string name="paperAbstract"><b>Abstract: </b></string>
+    <string name="sessionsTextView"><b>Sessions: </b></string>
+
+</resources>

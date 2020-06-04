@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_authors"
+        android:enabled="true"
+        android:icon="@drawable/ic_authors"
+        android:title="Authors"
+
+        />
+    <item
+        android:id="@+id/ic_papers"
+        android:enabled="true"
+        android:icon="@drawable/ic_papers"
+        android:title="Papers" />
+    <item
+        android:id="@+id/ic_sections"
+        android:enabled="true"
+        android:icon="@drawable/ic_sections"
+        android:title="Sections" />
+    <item
+        android:id="@+id/ic_chairpersons"
+        android:enabled="true"
+        android:icon="@drawable/ic_chairpersons"
+        android:title="Chairpersos" />
+
+    <item
+        android:id="@+id/ic_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+</menu>
