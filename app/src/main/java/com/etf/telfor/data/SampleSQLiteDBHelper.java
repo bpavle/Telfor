@@ -60,7 +60,7 @@ public class SampleSQLiteDBHelper extends SQLiteOpenHelper {
         "'paper_index' varchar(5) NOT NULL,"+
          "PRIMARY KEY (`paper_id`))");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS `section` (\n" +
-                "  `section_id` int(10)  NOT NULL ,\n" +
+                "  'section_id' int(10)  NOT NULL ,\n" +
                 "  `title` varchar(128) DEFAULT NULL,\n" +
                 "  PRIMARY KEY (`section_id`))");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS `chairperson` (\n" +

@@ -49,8 +49,16 @@ public class SectionsActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        Intent intent = getIntent();
 
-        packSections(getSections());
+        if(intent.getStringExtra("id")!=null && intent.getStringExtra("id").equals("ChairpersonsActivity")){
+            packSections((ArrayList<Section>) intent.getSerializableExtra("list"));
+            System.out.println("TO JE TAJ INTENT");
+        }
+
+        else packSections(getSections());
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -154,7 +162,7 @@ public class SectionsActivity extends AppCompatActivity {
         return true;
     }
 
-    public void packSections(ArrayList<Section> list) {
+     public void packSections(ArrayList<Section> list) {
         //ArrayList<Section> list = FakeApi.getSections();
         LinearLayout sectionScrolView = (LinearLayout) findViewById(R.id.sectionScrollView);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);

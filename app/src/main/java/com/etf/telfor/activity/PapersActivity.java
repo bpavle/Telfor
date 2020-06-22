@@ -54,12 +54,15 @@ public class PapersActivity extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
         Intent intent = getIntent();
 
+
        if(intent.getStringExtra("id")!=null && intent.getStringExtra("id").equals("AuthorsActivity")){
             packPapers((ArrayList<Paper>) intent.getSerializableExtra("list"));
-            System.out.println("TO JE TAJ INTENT");
-        }
 
-        else packPapers(getPapers());
+        }
+       else if(intent.getStringExtra("id")!=null && intent.getStringExtra("id").equals("SearchActivity")){
+           packPapers((ArrayList<Paper>) intent.getSerializableExtra("list"));
+       }
+       else packPapers(getPapers());
 
 
 

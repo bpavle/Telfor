@@ -1,19 +1,18 @@
 package com.etf.telfor.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.SearchView;
 
 import com.etf.telfor.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.etf.telfor.data.Paper;
+import com.etf.telfor.data.SampleSQLiteDBHelper;
+
+import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 
@@ -39,13 +38,61 @@ public class SearchActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 
 
+
             String query = intent.getStringExtra(SearchManager.QUERY);
             System.out.println("QUERY ZA PRETRAGU JE: "+query);
-            //use the query to search your data somehow
+            searchPapersForKeyword(query);
+
+
+
+
+
+
+
+
         }
     }
 
+public void searchPapersForKeyword(String keywords){
 
+    ArrayList<Paper> list = new ArrayList<>();
+    String[] keywordsArray = keywords.split(",");
+    System.out.println("KEYWORDSARRAY "+keywordsArray);
+
+    SQLiteDatabase database = new SampleSQLiteDBHelper(this).getReadableDatabase();
+
+   keywords = "\"%";
+
+    for(String s:keywordsArray){
+        keywords+= s+"%";
+    }
+    keywords+="\"";
+    System.out.println("KEYWORDS "+keywords);
+
+    Cursor cursor = database.rawQuery("SELECT * " +
+                    "from paper " +
+                    "WHERE keywords LIKE "+keywords,
+                    new String[]{});
+
+    System.out.println("SELECT * " +
+            "from paper " +
+            "WHERE keywords LIKE "+keywords);
+    while (cursor.moveToNext()){
+        Paper paper = new Paper(cursor.getInt(cursor.getColumnIndex(SampleSQLiteDBHelper.PAPER_COLUMN_ID)),
+                cursor.getString(cursor.getColumnIndex(SampleSQLiteDBHelper.PAPER_COLUMN_TITLE)),
+                cursor.getString(cursor.getColumnIndex(SampleSQLiteDBHelper.PAPER_COLUMN_ABSTRACT)),
+                cursor.getString(cursor.getColumnIndex(SampleSQLiteDBHelper.PAPER_COLUMN_KEYWORDS)),
+                cursor.getString(cursor.getColumnIndex(SampleSQLiteDBHelper.PAPER_COLUMN_INDEX)));
+        list.add(paper);
+    }
+    Intent intent = new Intent(SearchActivity.this, PapersActivity.class);
+    intent.putExtra("list", list);
+    intent.putExtra("id", "SearchActivity");
+    intent.setFlags(FLAG_ACTIVITY_NO_ANIMATION);
+    System.out.println("LISTA KOJU SALJEMO NA PAPERSACTIVITY JE: "+list);
+    startActivity(intent);
+
+}
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {

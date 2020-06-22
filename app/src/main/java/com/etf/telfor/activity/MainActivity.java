@@ -174,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
                             values.put(SampleSQLiteDBHelper.SECTION_COLUMN_ID, a.getSectionId());
                             values.put(SampleSQLiteDBHelper.SECTION_COLUMN_TITLE, a.getTitle());
+                            System.out.println("SECTION: " + a.getSectionId() + " , " + a.getTitle());
                             long newRowId = database.insert(SampleSQLiteDBHelper.SECTION_TABLE_NAME, null, values);
 
                         }
@@ -310,12 +311,9 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
         // Associate searchable configuration with the SearchView
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =(SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         /*searchView.setIconifiedByDefault(false);
         searchView.requestFocus();*/
         searchView.onActionViewExpanded();

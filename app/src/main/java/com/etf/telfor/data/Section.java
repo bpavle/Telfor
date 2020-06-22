@@ -1,6 +1,8 @@
 package com.etf.telfor.data;
 
-public class Section {
+import java.io.Serializable;
+
+public class Section implements Serializable {
     int sectionId=-1;
     String title;
 
