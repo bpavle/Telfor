@@ -3,28 +3,28 @@
         android:id="@+id/ic_authors"
         android:enabled="true"
         android:icon="@drawable/ic_authors"
-        android:title="Authors"
+        android:title="@string/authorsLabel"
 
         />
     <item
         android:id="@+id/ic_papers"
         android:enabled="true"
         android:icon="@drawable/ic_papers"
-        android:title="Papers" />
+        android:title="@string/papersLabel" />
     <item
         android:id="@+id/ic_sections"
         android:enabled="true"
         android:icon="@drawable/ic_sections"
-        android:title="Sections" />
+        android:title="@string/sectionsLabel" />
     <item
         android:id="@+id/ic_chairpersons"
         android:enabled="true"
         android:icon="@drawable/ic_chairpersons"
-        android:title="Chairpersos" />
+        android:title="@string/chairpersonsLabel" />
 
     <item
         android:id="@+id/ic_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="@string/homeLabel" />
 </menu>

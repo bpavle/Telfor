@@ -1,17 +1,8 @@
 package com.etf.telfor.api;
 
-import com.etf.telfor.data.Author;
-import com.etf.telfor.data.AuthorPaper;
-import com.etf.telfor.data.Chairperson;
-import com.etf.telfor.data.Paper;
-import com.etf.telfor.data.Section;
-import com.etf.telfor.data.Session;
-
-import java.util.ArrayList;
-
 public class FakeApi {
 
-    public static ArrayList<Author> getAuthors(){
+   /* public static ArrayList<Author> getAuthors(){
         ArrayList<Author> list = new ArrayList<>();
 
         list.add(new Author(1,"Pavel","Bradic","bpavle0@gmail.com","Serbia","School of Electrical Engineering"));
@@ -188,5 +179,5 @@ public class FakeApi {
         list.add(new Session(1,"Hodnik","22.3.2020.",s4,c2,ap6));
 
         return list;
-    }
+    }*/
 }
