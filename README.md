@@ -39,9 +39,9 @@ Being purely mobile app, design follows patterns from conference web site. It pr
 <br />
 <p>Home page</p>
 
-<img src="screen_shots/home_view.jpg   " alt="Main Activity" height="70%" width="70%">
+<img src="screen_shots/home_view.jpg   " alt="Main Activity"  width="40%">
 <p>Papers page</p>
-<img src="screen_shots/papers_view.jpg  " alt="Login Activity" height="70%" width="70%">
+<img src="screen_shots/papers_view.jpg  " alt="Login Activity" width="40%">
 
 
 
